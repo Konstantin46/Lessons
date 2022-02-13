@@ -1,7 +1,7 @@
 package lesson_2.homework;
 
 public class Tasks {
-    public static void main(String[] args) {task_1();
+    public static void main(String[] args) {task_3();
     }
 
     /**
@@ -39,10 +39,12 @@ public class Tasks {
                 default:
                     System.out.print(5);
             }
-
             switch (str.indexOf("o")) {
+                case 0: break;
+                case 1: break;
                 case 2:
                     System.out.print(10);
+                    break;
             }
         }
     }
@@ -53,28 +55,16 @@ public class Tasks {
      * чтобы в консоли было выведено значение: 102428338.
      * Запрещается что-либо изменять или менять местами.
      */
-        public static void task_3() {
-            if (compare(0, 1) & decreaseAndCompare(0, 1) & incrementAndCompare(0, 1)) {
+    public static void task_3() {
+        for (int i = 0; i < 4; i++) {
+            if (compare(i, 1) | decreaseAndCompare(i, 0) & incrementAndCompare(i, 2)) {
                 System.out.print("4");
-            } else if (decreaseAndCompare(1, 0) && incrementAndCompare(1, 0) || compare(1, 0)) {
-                System.out.print("8");
-            }
-            if (compare(1, 0) | decreaseAndCompare(1, 1) | incrementAndCompare(1, 2)) {
-                System.out.print("4");
-            } else if (decreaseAndCompare(1, 1) | incrementAndCompare(1, 1) || compare(2, 1)) {
-                System.out.print("8");
-            }
-            if (compare(2, 1) | decreaseAndCompare(2, 0) && incrementAndCompare(2, 1)) {
-                System.out.print("4");
-            } else if (decreaseAndCompare(1, 2) | incrementAndCompare(1, 2) || compare(2, 2)) {
-                System.out.print("8");
-            }
-            if (compare(3, 3) & decreaseAndCompare(3, 1) & incrementAndCompare(3, 1)) {
-                System.out.print("4");
-            } else if (decreaseAndCompare(4, 3) || incrementAndCompare(1, 3) | compare(1, 3)) {
+            } else if (decreaseAndCompare(3, i) || incrementAndCompare(2, i) | compare(3, i)) {
                 System.out.print("8");
             }
         }
+
+    }
         private static boolean compare(int a, int b) {
             boolean result = a == b;
             if (result) System.out.print(a);
